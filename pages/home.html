@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <style>
+    @font-face {
+      font-family: "main";
+      src: url(../resources/main.otf);
+    }
+    body,
+    html {
+      width: 100%;
+      height: 100%;
+      margin: 0px;
+    }
+    .long {
+      width: calc(264px * 0.9);
+      height: calc(32px * 0.9);
+      background: url(../textures/buttons/long-menu.png) 0 0 no-repeat;
+      background-position: center;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 18px;
+      text-decoration: none;
+    }
+
+    #menu {
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    * {
+      font-family: "main";
+    }
+  </style>
+  <body>
+    <div id="menu">
+      <a class="long" href="./singleplayer.html">Singleplayer</a>
+    </div>
+    <canvas></canvas>
+  </body>
+  <script>
+    document.querySelectorAll("a").forEach((e) => {
+      const a = new Audio("../resources/sfx/button-click.mp3");
+      e.onclick = (ev) => {
+        ev.preventDefault();
+        a.play();
+        a.addEventListener("ended",() => {
+          location.href = e.href;
+        });
+      };
+    });
+  </script>
+</html>

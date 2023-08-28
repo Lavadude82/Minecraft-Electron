@@ -1,0 +1,16 @@
+{
+  "name": "minecraft-electron",
+  "version": "1.0.0",
+  "description": "Minecraft Clone in JS",
+  "main": "script.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "perlin-noise-3d": "^0.5.4"
+  }
+}
